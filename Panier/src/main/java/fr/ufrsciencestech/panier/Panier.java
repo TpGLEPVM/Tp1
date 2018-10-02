@@ -5,11 +5,13 @@
  */
 package fr.ufrsciencestech.panier;
 
+import java.util.Observable;
+
 /**
  *
  * @author vb394093
  */
-public class Panier {
+public class Panier extends Observable{
     private java.util.ArrayList<Orange> listOrange;
     private int maxOrange;
                  
@@ -43,17 +45,36 @@ public class Panier {
      {
          return (p.quantite()==this.quantite());
      }
+     
+     public void ajoute()
+     {
+         if(!listOrange.isEmpty())
+         {
+             Orange o = listOrange.get(listOrange.size()-1);
+            ajoute(o);
+         }
+         else
+         {
+             ajoute(new Orange());
+         }
+     }
+     
      public void ajoute(Orange o){
          if(listOrange.size()==maxOrange){
              System.out.println("Trop d'oranges dans le panier.");
          }
          else {
              listOrange.add(o);
+             setChanged();
+             notifyObservers();
          }
+  
      }
      public void retire(){
          if(listOrange.size()>0){
              listOrange.remove(this.quantite()-1);
+             setChanged();
+             notifyObservers();
          }
          else{
              System.out.println("Le panier est vide !");

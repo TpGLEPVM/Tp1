@@ -13,6 +13,12 @@ public class Orange {
     private double prix;
     private String origine;
     
+    public Orange()
+    {
+        this.prix=1.0;
+        this.origine = "France";
+    }
+    
     public Orange(double prix,String origine) throws OrangeNegException {
         if(prix<=0){
             throw new OrangeNegException();

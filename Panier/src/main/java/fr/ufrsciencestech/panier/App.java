@@ -1,5 +1,7 @@
 package fr.ufrsciencestech.panier;
 
+import javax.swing.JButton;
+
 /**
  * Hello world!
  *
@@ -17,7 +19,16 @@ public class App
         p.boycotteOrigine("France");
         System.out.println(p.toString());
         
-//        System.out.println(e.message);
+        VueGSwing vue = new VueGSwing(); 
+        vue.setVisible(true);
+        
+        
+        MControler controler=new MControler(p,vue);
+        p.addObserver(vue);
+        vue.addControleur(controler);
+        vue.update(p, args);
+        
+        
         
 
     }
