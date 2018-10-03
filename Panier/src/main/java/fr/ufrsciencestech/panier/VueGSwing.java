@@ -13,7 +13,7 @@ import javax.swing.JButton;
  *
  * @author vb394093
  */
-public class VueGSwing extends javax.swing.JFrame implements Observer {
+public class VueGSwing extends javax.swing.JFrame implements VueGraphique {
 
     /**
      * Creates new form VueGSwing
@@ -39,18 +39,8 @@ public class VueGSwing extends javax.swing.JFrame implements Observer {
         setTitle("Panier");
 
         jButton1.setText("+");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
 
         jButton2.setText("-");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("0");
@@ -82,14 +72,6 @@ public class VueGSwing extends javax.swing.JFrame implements Observer {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments

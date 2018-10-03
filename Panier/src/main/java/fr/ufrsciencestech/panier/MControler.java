@@ -16,7 +16,7 @@ import javax.swing.JButton;
 public class MControler implements ActionListener{
     
     private Panier modele;
-    private VueGSwing vue;
+    private VueGraphique vue;
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton bouton = (JButton)e.getSource();
@@ -30,10 +30,11 @@ public class MControler implements ActionListener{
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public MControler(){}
-    public MControler(Panier p,VueGSwing v){
+    public MControler(Panier p,VueGraphique v){
         this.modele=p;
         this.vue=v;
     }
+
     public void setModele(Panier p){
         this.modele=p;
     }
