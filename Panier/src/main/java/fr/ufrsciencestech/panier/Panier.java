@@ -60,7 +60,7 @@ public class Panier extends Observable{
      }
      
      public void ajoute(Orange o){
-         if(listOrange.size()==maxOrange){
+         if(listOrange.size()==maxOrange || o == null){
              System.out.println("Trop d'oranges dans le panier.");
          }
          else {
